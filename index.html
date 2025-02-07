@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Даниил Альтерэго </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ruda:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+ 
+<body>
+    <header>
+        <h2 style="color: #c3073f;" id="theme" class="brandName">Krepish Company</h2> 
+        <button class="history">История</button>
+        <button id="openPopup" class="sign">Вход</button>
+    </header>
+
+    <div class="converter">
+        <label style="color: white" for="from-currency">Из:</label>
+        <select id="from-currency">
+            <option value="USD">USD - Доллар США</option>
+            <option value="EUR">EUR - Евро</option>
+            <option value="GBP">GBP - Фунт стерлингов</option>
+            <option value="JPY">JPY - Японская иена</option>
+            <option value="AUD">AUD - Австралийский доллар</option>
+            <option value="CAD">CAD - Канадский доллар</option>
+            <option value="CHF">CHF - Швейцарский франк</option>
+            <option value="CNY">CNY - Китайский юань</option>
+            <option value="SEK">SEK - Шведская крона</option>
+            <option value="NZD">NZD - Новозеландский доллар</option>
+            <option value="MXN">MXN - Мексиканский песо</option>
+            <option value="SGD">SGD - Сингапурский доллар</option>
+            <option value="HKD">HKD - Гонконгский доллар</option>
+            <option value="NOK">NOK - Норвежская крона</option>
+            <option value="KRW">KRW - Южнокорейская вона</option>
+            <option value="TRY">TRY - Турецкая лира</option>
+            <option value="RUB">RUB - Российский рубль</option>
+            <option value="INR">INR - Индийская рупия</option>
+            <option value="BRL">BRL - Бразильский реал</option>
+            <option value="ZAR">ZAR - Южноафриканский рэнд</option>
+            
+        </select>
+    
+        <label style="color: white" for="to-currency">В:</label>
+        <select id="to-currency">
+            <option value="RUB">RUB - Российский рубль</option>
+            <option value="USD">USD - Доллар США</option>
+            <option value="EUR">EUR - Евро</option>
+            <option value="GBP">GBP - Фунт стерлингов</option>
+            <option value="JPY">JPY - Японская иена</option>
+            <option value="AUD">AUD - Австралийский доллар</option>
+            <option value="CAD">CAD - Канадский доллар</option>
+            <option value="CHF">CHF - Швейцарский франк</option>
+            <option value="CNY">CNY - Китайский юань</option>
+            <option value="SEK">SEK - Шведская крона</option>
+            <option value="NZD">NZD - Новозеландский доллар</option>
+            <option value="MXN">MXN - Мексиканский песо</option>
+            <option value="SGD">SGD - Сингапурский доллар</option>
+            <option value="HKD">HKD - Гонконгский доллар</option>
+            <option value="NOK">NOK - Норвежская крона</option>
+            <option value="KRW">KRW - Южнокорейская вона</option>
+            <option value="TRY">TRY - Турецкая лира</option>
+            <option value="INR">INR - Индийская рупия</option>
+            <option value="BRL">BRL - Бразильский реал</option>
+            <option value="ZAR">ZAR - Южноафриканский рэнд</option>
+        </select>
+    
+        <input type="number" id="amount" placeholder="Сумма">
+        <button id="convert-button">Конвертировать</button>
+    
+        <p id="result"></p>
+        <p id="last-updated"></p> 
+    </div>
+    <div id="notification" class="notification hidden">Текст скопирован!</div>
+    
+    <regl id="popup">
+        <p id="t">Sign in</p>
+        <input type="text" name="email" id="pole" placeholder="Email">
+        <input type="text" name="password" id="pole" placeholder="Password">
+        <p id="login">Нет аккаунта? <a href="https://www.youtube.com/login">Регистрация</a></p>  
+        <span id="knopki">
+          <button id="btn">Sign in</button>
+          <button id="close">Cancel</button>  
+        </span>
+        
+      </regl>
+</body>
+<script src="script.js"></script>
+</html>
