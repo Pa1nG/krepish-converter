@@ -80,14 +80,22 @@ document.getElementById('result').addEventListener('click', async function () {
   const textToCopy = this.textContent;
 
   try {
-    await navigator.clipboard.writeText(textToCopy);
-    const notification = document.getElementById('notification');
-    notification.classList.remove('hidden');
-    notification.classList.add('show');
-    setTimeout(() => {
-      notification.classList.remove('show');
-      notification.classList.add('hidden');
-    }, 2000);
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(textToCopy);
+      showNotification('Текст скопирован!');
+    } else {
+      const tempTextArea = document.createElement('textarea');
+      tempTextArea.value = textToCopy;
+      document.body.appendChild(tempTextArea);
+
+      tempTextArea.select();
+      tempTextArea.setSelectionRange(0, 99999);
+
+      document.execCommand('copy');
+
+      document.body.removeChild(tempTextArea);
+      showNotification('Текст скопирован!');
+    }
   } catch (err) {
     console.error('Не удалось скопировать текст: ', err);
   }
